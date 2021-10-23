@@ -1,9 +1,10 @@
 import "./App.css";
+import FilterableTodoList from "./components/FilterableTodoList";
 
 const App = () => {
   return (
     <div className="App">
-      <h1>React Todo</h1>
+      <FilterableTodoList />
     </div>
   );
 };
