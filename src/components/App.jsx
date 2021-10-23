@@ -1,5 +1,4 @@
-import "./App.css";
-import FilterableTodoList from "./components/FilterableTodoList";
+import FilterableTodoList from "./FilterableTodoList";
 
 const App = () => {
   return (
