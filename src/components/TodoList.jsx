@@ -1,6 +1,12 @@
 import TaskRow from "./TaskRow";
 
-const TodoList = () => {
+const TodoList = ({ tasks }) => {
+  const rows = [];
+
+  tasks.forEach((task) => {
+    rows.push(<TaskRow task={task} key={task.name} />);
+  });
+
   return (
     <table>
       <thead>
@@ -9,8 +15,7 @@ const TodoList = () => {
           <th>Status</th>
         </tr>
       </thead>
-      <TaskRow taskName="Clean dishes" taskStatus="Todo" />
-      <TaskRow taskName="Fix garage" taskStatus="Done" />
+      <tbody>{rows}</tbody>
     </table>
   );
 };

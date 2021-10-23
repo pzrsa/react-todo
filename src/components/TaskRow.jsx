@@ -1,11 +1,11 @@
-const TaskRow = ({ taskName, taskStatus }) => {
+const TaskRow = ({ task }) => {
   return (
-    <tbody>
-      <tr>
-        <td>{taskName}</td>
-        <td>{taskStatus}</td>
-      </tr>
-    </tbody>
+    <tr>
+      <td>{task.name}</td>
+      <td>
+        <input type="checkbox" />
+      </td>
+    </tr>
   );
 };
 

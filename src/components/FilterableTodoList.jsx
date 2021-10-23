@@ -1,9 +1,9 @@
 import TodoList from "./TodoList";
 
-const FilterableTodoList = () => {
+const FilterableTodoList = ({ tasks }) => {
   return (
     <div>
-      <TodoList />
+      <TodoList tasks={tasks} />
     </div>
   );
 };
