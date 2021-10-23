@@ -12,7 +12,7 @@ const TodoList = ({ tasks }) => {
       <thead>
         <tr>
           <th>Task</th>
-          <th>Status</th>
+          <th>Completed</th>
         </tr>
       </thead>
       <tbody>{rows}</tbody>

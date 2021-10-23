@@ -3,7 +3,7 @@ const TaskRow = ({ task }) => {
     <tr>
       <td>{task.name}</td>
       <td>
-        <input type="checkbox" />
+        <input type="checkbox" checked={task.completed} />
       </td>
     </tr>
   );
