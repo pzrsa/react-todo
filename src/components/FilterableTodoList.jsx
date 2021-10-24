@@ -1,4 +1,5 @@
 import TodoList from "./TodoList";
+import TaskAdder from "./TaskAdder";
 import { useState } from "react";
 
 const FilterableTodoList = () => {
@@ -24,6 +25,7 @@ const FilterableTodoList = () => {
 
   return (
     <div>
+      <TaskAdder />
       <TodoList tasks={tasks} onToggle={handleCompleted} />
     </div>
   );
