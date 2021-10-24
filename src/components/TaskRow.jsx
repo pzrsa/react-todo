@@ -1,11 +1,19 @@
-const TaskRow = ({ task }) => {
+const TaskRow = ({ tasks, onToggle }) => {
   return (
-    <tr>
-      <td>{task.name}</td>
-      <td>
-        <input type="checkbox" checked={task.completed} />
-      </td>
-    </tr>
+    <>
+      {tasks.map((task) => (
+        <tr key={task.id}>
+          <td>{task.name}</td>
+          <td>
+            <input
+              type="checkbox"
+              checked={task.completed}
+              onChange={(e) => onToggle(task.id, e.target.checked)}
+            />
+          </td>
+        </tr>
+      ))}
+    </>
   );
 };
 
