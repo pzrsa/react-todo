@@ -14,7 +14,7 @@ const FilterableTodoList = () => {
   const addTask = (taskName) => {
     updateTasks((tasks) => [
       ...tasks,
-      { id: tasks.at(-1).id + 1, name: taskName, completed: false },
+      { id: tasks[tasks.length - 1].id + 1, name: taskName, completed: false },
     ]);
     console.log(tasks);
   };
