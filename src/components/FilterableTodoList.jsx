@@ -9,10 +9,10 @@ const FilterableTodoList = () => {
     { id: 2, name: "Research paper", completed: false },
   ];
 
-  const [tasks, addTask] = useState(initialTasks);
+  const [tasks, updateCompleted] = useState(initialTasks);
 
   const handleCompleted = (taskId, nextCompleted) => {
-    addTask(
+    updateCompleted(
       tasks.map((task) => {
         if (task.id === taskId) {
           return { ...task, completed: nextCompleted };
