@@ -19,7 +19,7 @@ const TaskAdder = ({ addTask }) => {
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <input type="submit" name="Add" />
+      <input type="submit" value="Add" />
     </form>
   );
 };
