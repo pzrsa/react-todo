@@ -9,10 +9,18 @@ const FilterableTodoList = () => {
     { id: 2, name: "Research paper", completed: false },
   ];
 
-  const [tasks, updateCompleted] = useState(initialTasks);
+  const [tasks, updateTasks] = useState(initialTasks);
+
+  const addTask = (taskName) => {
+    updateTasks((tasks) => [
+      ...tasks,
+      { id: tasks.at(-1).id + 1, name: taskName, completed: false },
+    ]);
+    console.log(tasks);
+  };
 
   const handleCompleted = (taskId, nextCompleted) => {
-    updateCompleted(
+    updateTasks(
       tasks.map((task) => {
         if (task.id === taskId) {
           return { ...task, completed: nextCompleted };
@@ -25,7 +33,7 @@ const FilterableTodoList = () => {
 
   return (
     <div>
-      <TaskAdder />
+      <TaskAdder addTask={addTask} />
       <TodoList tasks={tasks} onToggle={handleCompleted} />
     </div>
   );
