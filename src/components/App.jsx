@@ -3,7 +3,9 @@ import FilterableTodoList from "./FilterableTodoList";
 const App = () => {
   return (
     <div className="App">
-      <h1>React Todo</h1>
+      <a style={{ textDecoration: "none", color: "black" }} href="/">
+        <h1>React Todo</h1>
+      </a>
       <FilterableTodoList />
     </div>
   );
