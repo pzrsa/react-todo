@@ -12,6 +12,8 @@ const FilterableTodoList = () => {
   const [tasks, updateTasks] = useState(initialTasks);
 
   const addTask = (taskName) => {
+    if (!taskName) return;
+
     updateTasks((tasks) => [
       ...tasks,
       { id: tasks[tasks.length - 1].id + 1, name: taskName, completed: false },
