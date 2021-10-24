@@ -6,7 +6,6 @@ const TaskAdder = ({ addTask }) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    console.log(text);
     addTask(text);
 
     setText("");

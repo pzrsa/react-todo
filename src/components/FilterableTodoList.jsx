@@ -16,7 +16,6 @@ const FilterableTodoList = () => {
       ...tasks,
       { id: tasks[tasks.length - 1].id + 1, name: taskName, completed: false },
     ]);
-    console.log(tasks);
   };
 
   const handleCompleted = (taskId, nextCompleted) => {
