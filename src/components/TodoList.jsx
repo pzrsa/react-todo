@@ -1,7 +1,13 @@
 import TaskRow from "./TaskRow";
 
-const TodoList = ({ tasks }) => {
+const TodoList = () => {
   const rows = [];
+
+  const tasks = [
+    { name: "Clean dishes", completed: false },
+    { name: "Buy milk", completed: false },
+    { name: "Research paper", completed: false },
+  ];
 
   tasks.forEach((task) => {
     rows.push(<TaskRow task={task} key={task.name} />);
