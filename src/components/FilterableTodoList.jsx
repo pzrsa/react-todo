@@ -3,25 +3,38 @@ import TaskAdder from "./TaskAdder";
 import { useState } from "react";
 
 const FilterableTodoList = () => {
-  const initialTasks = [
-    { id: 0, name: "Clean dishes", completed: false },
-    { id: 1, name: "Buy milk", completed: false },
-    { id: 2, name: "Research paper", completed: false },
-  ];
-
-  const [tasks, updateTasks] = useState(initialTasks);
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || []
+  );
 
   const addTask = (taskName) => {
     if (!taskName) return;
 
-    updateTasks((tasks) => [
-      ...tasks,
-      { id: tasks[tasks.length - 1].id + 1, name: taskName, completed: false },
-    ]);
+    if (!tasks.length) {
+      const newTask = {
+        id: 0,
+        name: taskName,
+        completed: false,
+      };
+
+      setTasks((tasks) => [...tasks, newTask]);
+
+      localStorage.setItem("tasks", JSON.stringify([...tasks, newTask]));
+    } else {
+      const newTask = {
+        id: tasks[tasks.length - 1].id + 1,
+        name: taskName,
+        completed: false,
+      };
+
+      setTasks((tasks) => [...tasks, newTask]);
+
+      localStorage.setItem("tasks", JSON.stringify([...tasks, newTask]));
+    }
   };
 
   const handleCompleted = (taskId, nextCompleted) => {
-    updateTasks(
+    setTasks(
       tasks.map((task) => {
         if (task.id === taskId) {
           return { ...task, completed: nextCompleted };
