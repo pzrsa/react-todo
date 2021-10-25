@@ -2,7 +2,7 @@ import TaskRow from "./TaskRow";
 
 const TodoList = ({ tasks, onToggle }) => {
   return (
-    <table>
+    <table style={{ marginLeft: "auto", marginRight: "auto" }}>
       <thead>
         <tr>
           <th>Task</th>
