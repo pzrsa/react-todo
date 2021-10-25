@@ -1,5 +1,6 @@
 import TodoList from "./TodoList";
 import TaskAdder from "./TaskAdder";
+import FilterBar from "./FilterBar";
 import { useState } from "react";
 
 const FilterableTodoList = () => {
@@ -45,8 +46,14 @@ const FilterableTodoList = () => {
     );
   };
 
+  const resetTasks = () => {
+    setTasks([]);
+    localStorage.clear();
+  };
+
   return (
     <div>
+      <FilterBar resetTasks={resetTasks} />
       <TaskAdder addTask={addTask} />
       <TodoList tasks={tasks} onToggle={handleCompleted} />
     </div>
