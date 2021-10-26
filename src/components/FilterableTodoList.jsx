@@ -4,9 +4,7 @@ import FilterBar from "./FilterBar";
 import { useState } from "react";
 
 const FilterableTodoList = () => {
-  const [tasks, setTasks] = useState(
-    JSON.parse(localStorage.getItem("tasks")) || []
-  );
+  const [tasks, setTasks] = useState([]);
 
   const addTask = (taskName) => {
     if (!taskName) return;
@@ -19,8 +17,6 @@ const FilterableTodoList = () => {
       };
 
       setTasks((tasks) => [...tasks, newTask]);
-
-      localStorage.setItem("tasks", JSON.stringify([...tasks, newTask]));
     } else {
       const newTask = {
         id: tasks[tasks.length - 1].id + 1,
@@ -29,8 +25,6 @@ const FilterableTodoList = () => {
       };
 
       setTasks((tasks) => [...tasks, newTask]);
-
-      localStorage.setItem("tasks", JSON.stringify([...tasks, newTask]));
     }
   };
 
@@ -48,7 +42,6 @@ const FilterableTodoList = () => {
 
   const resetTasks = () => {
     setTasks([]);
-    localStorage.clear();
   };
 
   return (
