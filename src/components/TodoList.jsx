@@ -6,7 +6,7 @@ const TodoList = ({ tasks, onToggle }) => {
       <thead>
         <tr>
           <th>Tasks</th>
-          <th>Completed</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
