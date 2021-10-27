@@ -1,6 +1,6 @@
 import TaskRow from "./TaskRow";
 
-const TodoList = ({ tasks, onToggle }) => {
+const TodoList = ({ tasks, handleCompleted }) => {
   return (
     <table style={{ marginLeft: "auto", marginRight: "auto" }}>
       <thead>
@@ -10,7 +10,7 @@ const TodoList = ({ tasks, onToggle }) => {
         </tr>
       </thead>
       <tbody>
-        <TaskRow tasks={tasks} onToggle={onToggle} />
+        <TaskRow tasks={tasks} onToggle={handleCompleted} />
       </tbody>
     </table>
   );

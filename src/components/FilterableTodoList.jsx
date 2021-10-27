@@ -39,7 +39,7 @@ const FilterableTodoList = () => {
     <div>
       <FilterBar resetTasks={resetTasks} tasks={tasks} />
       <TaskAdder addTask={addTask} />
-      <TodoList tasks={tasks} onToggle={handleCompleted} />
+      <TodoList tasks={tasks} handleCompleted={handleCompleted} />
     </div>
   );
 };
