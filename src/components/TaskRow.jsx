@@ -3,7 +3,15 @@ const TaskRow = ({ tasks, onToggle }) => {
     <>
       {tasks.map((task) => (
         <tr key={task.id}>
-          <td>{task.name}</td>
+          <td>
+            {task.completed ? (
+              <span style={{ textDecoration: "line-through" }}>
+                {task.name}
+              </span>
+            ) : (
+              task.name
+            )}
+          </td>
           <td>
             <input
               type="checkbox"
