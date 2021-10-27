@@ -5,7 +5,7 @@ const TodoList = ({ tasks, onToggle }) => {
     <table style={{ marginLeft: "auto", marginRight: "auto" }}>
       <thead>
         <tr>
-          <th>Task</th>
+          <th>Tasks</th>
           <th>Completed</th>
         </tr>
       </thead>
