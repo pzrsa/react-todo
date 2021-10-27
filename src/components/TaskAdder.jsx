@@ -15,11 +15,10 @@ const TaskAdder = ({ addTask }) => {
     <form onSubmit={onSubmit}>
       <input
         type="text"
-        placeholder="Add task"
+        placeholder="add task"
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <input type="submit" value="Add" />
     </form>
   );
 };
