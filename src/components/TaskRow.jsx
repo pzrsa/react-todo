@@ -3,14 +3,8 @@ const TaskRow = ({ tasks, onToggle }) => {
     <>
       {tasks.map((task) => (
         <tr key={task.id}>
-          <td>
-            {task.completed ? (
-              <span style={{ textDecoration: "line-through" }}>
-                {task.name}
-              </span>
-            ) : (
-              task.name
-            )}
+          <td style={{ textDecoration: task.completed ? "line-through" : "" }}>
+            {task.name}
           </td>
           <td>
             <input
