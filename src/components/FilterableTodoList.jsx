@@ -1,7 +1,8 @@
-import TodoList from "./TodoList";
-import TaskAdder from "./TaskAdder";
-import FilterBar from "./FilterBar";
+import { nanoid } from "nanoid";
 import { useState } from "react";
+import FilterBar from "./FilterBar";
+import TaskAdder from "./TaskAdder";
+import TodoList from "./TodoList";
 
 const FilterableTodoList = () => {
   const [tasks, setTasks] = useState([]);
@@ -9,23 +10,13 @@ const FilterableTodoList = () => {
   const addTask = (taskName) => {
     if (!taskName) return;
 
-    if (!tasks.length) {
-      const newTask = {
-        id: 0,
-        name: taskName,
-        completed: false,
-      };
+    const newTask = {
+      id: nanoid(7),
+      name: taskName,
+      completed: false,
+    };
 
-      setTasks((tasks) => [...tasks, newTask]);
-    } else {
-      const newTask = {
-        id: tasks[tasks.length - 1].id + 1,
-        name: taskName,
-        completed: false,
-      };
-
-      setTasks((tasks) => [...tasks, newTask]);
-    }
+    setTasks((tasks) => [...tasks, newTask]);
   };
 
   const handleCompleted = (taskId, nextCompleted) => {
