@@ -4,10 +4,8 @@ const TodoList = ({ tasks, handleCompleted }) => {
   return (
     <table
       style={{
-        marginLeft: "auto",
-        marginRight: "auto",
         tableLayout: "fixed",
-        width: "25%",
+        width: "250px",
       }}
     >
       <thead>
