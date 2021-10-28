@@ -7,7 +7,7 @@ const TodoList = ({ tasks, handleCompleted }) => {
         marginLeft: "auto",
         marginRight: "auto",
         tableLayout: "fixed",
-        width: "50%",
+        width: "25%",
       }}
     >
       <thead>
