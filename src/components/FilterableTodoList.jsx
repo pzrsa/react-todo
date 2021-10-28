@@ -35,8 +35,8 @@ const FilterableTodoList = () => {
     setTasks([]);
   };
 
-  const [showAllTasks, setShowAllTasks] = useState(true);
-  const [showDueTasks, setShowDueTasks] = useState(false);
+  const [showAllTasks, setShowAllTasks] = useState(false);
+  const [showDueTasks, setShowDueTasks] = useState(true);
   const [showCompletedTasks, setShowCompletedTasks] = useState(false);
 
   let tasksToShow = tasks;
