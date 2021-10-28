@@ -3,7 +3,12 @@ const TaskRow = ({ tasks, onToggle }) => {
     <>
       {tasks.map((task) => (
         <tr key={task.id}>
-          <td style={{ textDecoration: task.completed ? "line-through" : "" }}>
+          <td
+            style={{
+              textDecoration: task.completed ? "line-through" : "",
+              wordWrap: "break-word",
+            }}
+          >
             {task.name}
           </td>
           <td>

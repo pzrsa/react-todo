@@ -2,7 +2,14 @@ import TaskRow from "./TaskRow";
 
 const TodoList = ({ tasks, handleCompleted }) => {
   return (
-    <table style={{ marginLeft: "auto", marginRight: "auto" }}>
+    <table
+      style={{
+        marginLeft: "auto",
+        marginRight: "auto",
+        tableLayout: "fixed",
+        width: "50%",
+      }}
+    >
       <thead>
         <tr>
           <th>Tasks</th>
